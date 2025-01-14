@@ -1,30 +1,94 @@
+<script>
+import { mapState } from 'vuex';
+
+export default {
+
+  computed: mapState([
+    'pagina'
+  ])
+
+
+}
+
+
+</script>
+
+
 <template>
+  <header>
+    <h3>Bruning Sistemas</h3>
+  </header>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <div class="title">
+      Colaboradores da Bruning
+    </div>
+    <div class="options">
+      <router-link class="option" :class="{ active: this.pagina == 'lista' }" to="/">Lista</router-link>
+      <router-link class="option" :class="{ active: this.pagina == 'registro' }" to="Registro">Cadastro</router-link>
+    </div>
   </nav>
-  <router-view/>
+  <div class="router-view">
+    <router-view />
+  </div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #273643;
+}
+
+header {
+  height: 60px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+header.h3 {
+  font-size: 12px;
 }
 
 nav {
-  padding: 30px;
+  height: 40px;
+  width: 80%;
+  margin: 10px auto;
+  border: 2px solid #C8D3DC;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.title {
+  font-size: 24px;
+  font-weight: 600;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.option {
+  font-weight: 500;
+  color: #999;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  padding: 0px 3px 5px 3px;
+  margin-left: 20px;
+}
+
+.option.active {
+  font-weight: 500;
+  color: #2685D8;
+  border-bottom: 2px solid #2685D8;
+  text-decoration: none;
+  padding: 0px 3px 5px 3px;
+  margin-left: 20px;
+}
+
+.router-view {
+  width: 80%;
+  margin: 10px auto;
+  border: 2px solid #C8D3DC;
+  padding: 20px;
+  min-height: 450px;
 }
 </style>

@@ -1,24 +1,19 @@
-# front-colaborador
+# Projeto Teste Bruning Front-End
 
-## Project setup
+## Para instalar as dependencias
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Configuração necessária
 ```
-npm run serve
+1 - vá até o diretório src/store/index.js
+2 - Dentro do arquivo altere o valor da state 'api' para o link da api por exemplo http://ENDEREÇO-AQUI/api/colaboradores
+3 - salve o arquivo
+
 ```
 
-### Compiles and minifies for production
+### Compilar para produção
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
